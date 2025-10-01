@@ -1,0 +1,23 @@
+# Remember that this file is NOT used in tests.
+# There are separate locale files for testing.
+
+en:
+  models:
+    animal: Best friend
+
+  activemodel:
+    attributes:
+      animal:
+        four_legged: Has four legs?
+      house:
+        longthing: This is a very long attribute name. Actually so long that it may cause all sorts of line breaks here and there. It is not sure where exactly, but it will be there at some point.
+
+  helpers:
+
+    hint:
+      animal:
+        four_legged: Whether or not this animal has four legs.
+        four_legged_active: I have four legs.
+        four_legged_inactive: I am not four legged.
+      wink:
+        created_at: When was this made?

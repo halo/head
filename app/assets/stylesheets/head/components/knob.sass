@@ -1,0 +1,25 @@
+@use "iglu/font-size"
+@use "iglu/spacing"
+@use "head/settings/colors"
+@use "head/tools/link"
+
+.c-head-knob
+  display: grid
+  padding-left: 0.3rem
+  padding-right: 0.3rem
+  text-decoration: none
+  +spacing.padding-vertical--tiny
+  +font-size.gigantic
+
+  +link.states
+    color: colors.$steel-gray
+
+  &:hover
+    color: colors.$silver-gray
+
+  &:active
+    color: colors.$white
+
+  &.is-active
+    color: colors.$white
+

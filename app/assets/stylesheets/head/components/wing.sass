@@ -1,0 +1,45 @@
+@use "iglu/responsive"
+
+.c-head-wing
+  display: none
+  max-width: 265px
+  height: 100%
+  z-index: 1000
+  position: absolute
+
+  &--right
+    right: 0
+
+  &.is-active
+    display: block
+
+  +responsive.xlarge-container
+    position: static
+
+  &__curtain
+    position: absolute
+    top: 0
+    left: 100%
+    width: 100vw
+    height: 100%
+    z-index: 1001
+
+    &--right
+      right: 100%
+      left: inherit
+
+    +responsive.xlarge-container
+      display: none
+
+
++responsive.xxlarge
+  .c-head-wing
+
+    // We "force" this item to be active without having the `is-active` class.
+    &--left[data-identifier=mainmenu]
+      display: block
+      background: blue
+
+      // So we need some way to deactivate it again using JS.
+      &.is-force-deactive
+        display: none

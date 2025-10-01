@@ -1,0 +1,13 @@
+<%= render Head::Theater.new do |theater| %>
+  <% theater.with_mainmenu do %>
+    I am the menu
+  <% end %>
+
+  <%= render Head::Knob.new id: :custom do |knob| %>
+
+  <% end %>
+
+  <% theater.with_logo do %>
+    I am a logo
+  <% end %>
+<% end %>

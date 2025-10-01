@@ -1,0 +1,18 @@
+<%= render Head::Theater.new do |theater| %>
+  <%= theater.with_mainmenu do %>
+    Here be the <b>Menu</b>
+  <% end %>
+
+  <%= theater.with_body do %>
+    I am the body
+  <% end %>
+
+  <%#= render Head::Knob.new id: :custom do |knob| %>
+
+  <%# end %>
+
+  <% theater.with_logo do %>
+    <%= image_tag 'logoipsum-402.svg' %>
+  <% end %>
+
+<% end %>

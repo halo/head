@@ -1,0 +1,15 @@
+<%= render Head::Theater.new do |theater| %>
+  <% theater.with_knob preset: :mainmenu %>
+
+  <%= render Head::Knob.new id: :custom do |knob| %>
+
+  <% end %>
+
+  <% theater.with_logo do %>
+    I am a logo
+    <br>
+    A large one at that.
+    <br>
+    Very.
+  <% end %>
+<% end %>

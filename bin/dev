@@ -1,0 +1,5 @@
+#!/bin/sh
+
+goreman -exit-on-error -f Procfile.dev start
+
+# http://127.0.0.1:3006/lookbook

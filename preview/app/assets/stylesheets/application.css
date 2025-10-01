@@ -1,0 +1,191 @@
+@keyframes head-flip {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}
+@font-face {
+  font-family: "headicons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("head/headicons.woff") format("woff");
+}
+.c-head-theater {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.c-head-theater__roof {
+  background-color: #444;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "knobs--left logo knobs--right";
+}
+.c-head-theater__knobs--left {
+  grid-area: knobs--left;
+}
+.c-head-theater__logo {
+  grid-area: logo;
+}
+.c-head-theater__knobs--right {
+  grid-area: knobs--right;
+}
+.c-head-theater__knobs {
+  display: flex;
+  white-space: nowrap;
+}
+.c-head-theater__knobs--left {
+  margin-left: 0.5714rem;
+}
+.c-head-theater__knobs--right {
+  justify-content: flex-end;
+}
+.c-head-theater__knobs--right {
+  margin-right: 0.5714rem;
+}
+.c-head-theater__logo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  padding: 0.3rem;
+}
+.c-head-theater__logo:active {
+  top: 1px;
+}
+.c-head-theater__stage {
+  display: grid;
+  container-type: inline-size;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "wings--left content wings--right";
+}
+.c-head-theater__wings--left {
+  grid-area: wings--left;
+}
+.c-head-theater__content {
+  grid-area: content;
+}
+.c-head-theater__wings--right {
+  grid-area: wings--right;
+}
+
+.c-head-knob {
+  display: grid;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  text-decoration: none;
+}
+.c-head-knob {
+  padding-top: 0.2857rem;
+}
+.c-head-knob {
+  padding-bottom: 0.2857rem;
+}
+.c-head-knob {
+  font-size: 1.7143rem;
+}
+.c-head-knob, .c-head-knob:hover, .c-head-knob:active, .c-head-knob:visited {
+  color: rgb(133.75, 133.75, 133.75);
+}
+.c-head-knob:hover {
+  color: rgb(197.5, 197.5, 197.5);
+}
+.c-head-knob:active {
+  color: #fff;
+}
+.c-head-knob.is-active {
+  color: #fff;
+}
+
+.c-head-wing {
+  display: none;
+  max-width: 265px;
+  height: 100%;
+  z-index: 1000;
+  position: absolute;
+}
+.c-head-wing--right {
+  right: 0;
+}
+.c-head-wing.is-active {
+  display: block;
+}
+@container (min-width: 64em) {
+  .c-head-wing {
+    position: static;
+  }
+}
+.c-head-wing__curtain {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100%;
+  z-index: 1001;
+}
+.c-head-wing__curtain--right {
+  right: 100%;
+  left: inherit;
+}
+@container (min-width: 64em) {
+  .c-head-wing__curtain {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 94em) {
+  .c-head-wing--left[data-identifier=mainmenu] {
+    display: block;
+    background: blue;
+  }
+  .c-head-wing--left[data-identifier=mainmenu].is-force-deactive {
+    display: none;
+  }
+}
+.o-headicon {
+  font-family: "headicons";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.o-headicon--bars-bold:before {
+  content: "\e905";
+}
+
+.u-head-smokescreen {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px) grayscale(1);
+}
+
+html {
+  font-size: 14px;
+}
+@media screen and (min-width: 30em) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 48em) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 64em) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 94em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+body {
+  background-color: pink;
+}
+
+/*# sourceMappingURL=application.css.map */

@@ -1,0 +1,50 @@
+@use "iglu/spacing"
+@use "head/settings/colors"
+
+.c-head-theater
+  height: 100%
+  display: grid
+  grid-template-rows: auto 1fr
+
+  &__roof
+    background-color: #444
+    display: grid
+    align-items: center
+    grid-template-columns: auto 1fr auto
+    grid-template-areas: "knobs--left logo knobs--right"
+
+  @each $column in knobs--left logo knobs--right
+    &__#{$column}
+      grid-area: #{$column}
+
+  &__knobs
+    display: flex
+    white-space: nowrap
+
+    &--left
+      +spacing.margin-left--smaller
+
+    &--right
+      justify-content: flex-end
+      +spacing.margin-right--smaller
+
+  &__logo
+    display: flex
+    justify-content: center
+    position: relative
+    color: colors.$white
+    padding: 0.3rem
+
+    &:active
+      top: 1px
+
+  &__stage
+    display: grid
+    // So we can track the width of the curtain
+    container-type: inline-size
+    grid-template-columns: auto 1fr auto
+    grid-template-areas: "wings--left content wings--right"
+
+  @each $column in wings--left content wings--right
+    &__#{$column}
+      grid-area: #{$column}
