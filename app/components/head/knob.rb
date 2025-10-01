@@ -3,7 +3,7 @@
 module Head
   class Knob < ApplicationComponent
     erb_template <<~ERB
-      <%= link_to(url, class: classes, data: { identifier: id, group: group }) do %>
+      <%= link_to(url, class: classes, data: { identifier: id, group: group }, **options.except(:url)) do %>
         <% if icon %>
           <i class="o-headicon <%= icon_class%><%=  %>"></i>
         <% end %>
@@ -16,21 +16,28 @@ module Head
     option :right, default: -> { false }
     option :id, as: :manual_id, default: -> { false }
     option :icon, as: :manual_icon, default: -> {}
+    option :url, as: :manual_url, default: -> {}
+    option :options, default: -> { {} }
 
     def self.mainmenu
       new(id: :mainmenu, icon: :bars_bold)
     end
 
+    def self.search(**)
+      new(id: :search, icon: :magnifier, **)
+    end
+
     def id
       return manual_id if manual_id
 
-      preset
+      preset if preset_mainmenu?
     end
 
     def icon
       return manual_icon if manual_icon
+      return :'bars-bold' if preset_mainmenu?
 
-      :'bars-bold' if preset_mainmenu?
+      :magnifier if preset_search?
     end
 
     def icon_class
@@ -38,7 +45,7 @@ module Head
     end
 
     def url
-      @url.presence || '#'
+      manual_url || options[:url] || '#'
     end
 
     def classes
@@ -59,6 +66,10 @@ module Head
 
     def preset_mainmenu?
       preset == :mainmenu
+    end
+
+    def preset_search?
+      preset == :search
     end
   end
 end

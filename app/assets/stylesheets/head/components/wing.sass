@@ -36,9 +36,8 @@
   .c-head-wing
 
     // We "force" this item to be active without having the `is-active` class.
-    &--left[data-identifier=mainmenu]
+    &[data-identifier="mainmenu"]
       display: block
-      background: blue
 
       // So we need some way to deactivate it again using JS.
       &.is-force-deactive

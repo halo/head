@@ -50,6 +50,10 @@ module Head
       with_wing(preset: :mainmenu, &)
     end
 
+    def with_search(**options)
+      with_knob(preset: :search, options:)
+    end
+
     renders_many :knobs, ::Head::Knob
     renders_many :wings, ::Head::Wing
 

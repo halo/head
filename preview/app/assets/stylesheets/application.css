@@ -71,8 +71,8 @@
 
 .c-head-knob {
   display: grid;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   text-decoration: none;
 }
 .c-head-knob {
@@ -134,11 +134,10 @@
 }
 
 @media screen and (min-width: 94em) {
-  .c-head-wing--left[data-identifier=mainmenu] {
+  .c-head-wing[data-identifier=mainmenu] {
     display: block;
-    background: blue;
   }
-  .c-head-wing--left[data-identifier=mainmenu].is-force-deactive {
+  .c-head-wing[data-identifier=mainmenu].is-force-deactive {
     display: none;
   }
 }
@@ -153,6 +152,10 @@
 
 .o-headicon--bars-bold:before {
   content: "\e905";
+}
+
+.o-headicon--magnifier:before {
+  content: "\e903";
 }
 
 .u-head-smokescreen {

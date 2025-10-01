@@ -6,7 +6,6 @@ Opinionated ViewComponents for building forms.
 
 ```ruby
 # In Rails view
-= render Head::String.new(f:, attribute_name: :first_name)
 ```
 
 ## Installation
