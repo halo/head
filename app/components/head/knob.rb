@@ -49,7 +49,9 @@ module Head
     end
 
     def classes
-      %w[c-head-knob js-head-knob]
+      result = %w[c-head-knob js-head-knob]
+      result.push 'c-head-knob--avatar' if preset_avatar?
+      result
     end
 
     def group
@@ -70,6 +72,10 @@ module Head
 
     def preset_search?
       preset == :search
+    end
+
+    def preset_avatar?
+      preset == :avatar
     end
   end
 end

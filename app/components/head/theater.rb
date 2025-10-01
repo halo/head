@@ -54,6 +54,12 @@ module Head
       with_knob(preset: :search, options:)
     end
 
+    def with_identicon(username:)
+      with_knob(preset: :avatar, right: true) do |knob|
+        ::Head::Identicon.new(username.to_s).to_svg
+      end
+    end
+
     renders_many :knobs, ::Head::Knob
     renders_many :wings, ::Head::Wing
 

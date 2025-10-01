@@ -7,6 +7,8 @@ module Head
   class Engine < ::Rails::Engine
     isolate_namespace Head
 
+    config.autoload_paths << root.join('lib')
+
     initializer 'head.importmap', before: 'importmap' do |app|
       app.config.importmap.paths << Engine.root.join('config/importmap.rb')
       # Watch JS changes in development

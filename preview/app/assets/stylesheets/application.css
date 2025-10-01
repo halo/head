@@ -96,6 +96,19 @@
 .c-head-knob.is-active {
   color: #fff;
 }
+.c-head-knob--avatar {
+  max-width: 1em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.c-head-knob--avatar svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 .c-head-wing {
   display: none;
