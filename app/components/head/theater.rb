@@ -65,8 +65,15 @@ module Head
     end
 
     def with_identicon(username:, &)
-      with_knob(preset: :avatar, right: true) do
+      with_knob(preset: :identicon, right: true) do
         ::Head::Identicon.new(username.to_s).to_svg
+      end
+      with_wing(id: :identicon, right: true, &)
+    end
+
+    def with_avatar(image:, &)
+      with_knob(preset: :avatar, right: true) do
+        image_tag(image)
       end
       with_wing(id: :avatar, right: true, &)
     end
