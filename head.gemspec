@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ['github@posteo.org']
 
   spec.summary = 'A simple, opinionated navigation menu ViewComponent'
-  spec.description = 'With sidebars that works well on all screen widths.'
+  spec.description = 'With sidebars that work well on all screen widths.'
   spec.homepage = 'https://github.com/halo/head'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.4'
