@@ -1,4 +1,5 @@
 @use "iglu/responsive"
+@use "head/settings/colors"
 
 .c-head-wing
   display: none
@@ -6,6 +7,8 @@
   height: 100%
   z-index: 1000
   position: absolute
+  background: colors.$granite-gray
+  color: colors.$white
 
   &--right
     right: 0

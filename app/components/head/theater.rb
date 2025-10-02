@@ -50,12 +50,22 @@ module Head
       with_wing(preset: :mainmenu, &)
     end
 
+    def with_notifications(&)
+      with_knob(preset: :notifications, right: true)
+      with_wing(preset: :notifications, right: true, &)
+    end
+
+    def with_settings(&)
+      with_knob(preset: :settings, right: true)
+      with_wing(preset: :settings, right: true, &)
+    end
+
     def with_search(**options)
       with_knob(preset: :search, options:)
     end
 
     def with_identicon(username:)
-      with_knob(preset: :avatar, right: true) do |knob|
+      with_knob(preset: :avatar, right: true) do
         ::Head::Identicon.new(username.to_s).to_svg
       end
     end

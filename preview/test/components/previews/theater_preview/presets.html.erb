@@ -9,8 +9,6 @@
 
   <%= theater.with_search url: 'https://example.com', target: :_blank %>
 
-
-
   <%#= render Head::Knob.new id: :custom do |knob| %>
 
   <%# end %>
@@ -18,6 +16,12 @@
   <% theater.with_logo do %>
     <%= image_tag 'logoipsum-402.svg' %>
   <% end %>
+
+  <%= theater.with_notifications do %>
+    <b>Notifications</b> over here
+  <% end %>
+
+  <%= theater.with_settings %>
 
   <%= theater.with_identicon username: rand(99999) %>
 <% end %>

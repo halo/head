@@ -116,6 +116,8 @@
   height: 100%;
   z-index: 1000;
   position: absolute;
+  background: rgb(70, 70, 70);
+  color: #fff;
 }
 .c-head-wing--right {
   right: 0;
@@ -171,11 +173,22 @@
   content: "\e903";
 }
 
+.o-headicon--bell:before {
+  content: "\e902";
+}
+
+.o-headicon--gear:before {
+  content: "\e906";
+}
+
 .u-head-smokescreen {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(2px) grayscale(1);
 }
 
+html {
+  height: 100%;
+}
 html {
   font-size: 14px;
 }
@@ -201,6 +214,7 @@ html {
 }
 
 body {
+  height: 100%;
   background-color: pink;
 }
 

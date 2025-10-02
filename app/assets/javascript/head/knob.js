@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.js-head-knob').forEach((item) => {
-    const identifier = item.dataset.identifier
+    const href = item.getAttribute('href')
 
     // If this knob doesn't open a sidebar, it is a standalone link.
-    if (!identifier) return
+    if (href != '#') return
 
     item.addEventListener('click', function(event) {
       event.preventDefault()

@@ -19,23 +19,15 @@ module Head
     option :url, as: :manual_url, default: -> {}
     option :options, default: -> { {} }
 
-    def self.mainmenu
-      new(id: :mainmenu, icon: :bars_bold)
-    end
-
-    def self.search(**)
-      new(id: :search, icon: :magnifier, **)
-    end
-
     def id
-      return manual_id if manual_id
-
-      preset if preset_mainmenu?
+      manual_id || preset
     end
 
     def icon
       return manual_icon if manual_icon
       return :'bars-bold' if preset_mainmenu?
+      return :bell if preset_notifications?
+      return :gear if preset_settings?
 
       :magnifier if preset_search?
     end
@@ -76,6 +68,14 @@ module Head
 
     def preset_avatar?
       preset == :avatar
+    end
+
+    def preset_notifications?
+      preset == :notifications
+    end
+
+    def preset_settings?
+      preset == :settings
     end
   end
 end
