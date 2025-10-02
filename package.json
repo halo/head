@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "iglu": "^2.0.5",
-    "typescript": "^5.9.2"
+    "iglu": "^2.0.5"
   }
 }

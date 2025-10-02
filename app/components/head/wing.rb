@@ -3,29 +3,23 @@
 module Head
   class Wing < ApplicationComponent
     erb_template <<~ERB
-      <div class="c-head-wing js-head-wing" data-identifier="<%= id %>" data-group="<%= group %>">
+      <div class="<%= classes.join(' ') %>" data-identifier="<%= id %>" data-group="<%= group %>">
         <%= content %>
         <div class="c-head-wing__curtain c-head-wing__curtain--<%= group %> js-head-wing__curtain u-head-smokescreen">
         </div>
       </div>
     ERB
 
-    option :preset, default: -> {}
-    option :id, as: :manual_id, default: -> {}
+    option :id, as: :id, default: -> {}
     option :right, default: -> { false }
 
     def self.mainmenu
       new(id: :mainmenu)
     end
 
-    def id
-      return manual_id if manual_id
-
-      preset
-    end
 
     def classes
-      %w[c-head-wing js-head-wing]
+      %W[c-head-wing c-head-wing--#{group} js-head-wing]
     end
 
     def group
@@ -38,10 +32,6 @@ module Head
 
     def right?
       @right
-    end
-
-    def preset_mainmenu?
-      preset == :mainmenu
     end
   end
 end

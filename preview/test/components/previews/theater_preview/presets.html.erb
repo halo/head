@@ -21,7 +21,11 @@
     <b>Notifications</b> over here
   <% end %>
 
-  <%= theater.with_settings %>
+  <%= theater.with_settings do %>
+    <b>Settings</b> over here
+  <% end %>
 
-  <%= theater.with_identicon username: rand(99999) %>
+  <%= theater.with_identicon username: rand(99999) do %>
+    <b>Avataring</b> over here
+  <% end %>
 <% end %>

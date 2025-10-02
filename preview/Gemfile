@@ -6,13 +6,11 @@ ruby '3.4.5'
 
 gem 'head', path: '../'
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'propshaft'
 gem 'rails', '~> 7.1.4'
 gem 'rails-i18n'
 gem 'sass-embedded'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+# gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
@@ -27,7 +25,7 @@ end
 gem 'sqlite3'
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem 'lookbook', github: 'lookbook-hq/lookbook', branch: 'fix-preview-csrf-exception'
   gem 'lookbook'
+  gem 'listen' # For lookbook live updates
+  gem 'actioncable' # For lookbook live updates
 end

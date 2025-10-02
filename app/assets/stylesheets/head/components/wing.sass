@@ -3,6 +3,9 @@
 
 .c-head-wing
   display: none
+  // 320px is the min screen width we support.
+  // Our sidebar cannot be bigger, and it needs to leave some space
+  // at the right so that a click/tap there can close the sidebar.
   max-width: 265px
   height: 100%
   z-index: 1000
@@ -10,14 +13,34 @@
   background: colors.$granite-gray
   color: colors.$white
 
+  &--left
+    // On rather large screens, always show the main menu in left sidebar
+    +responsive.xlarge-container
+      position: static
+
+      &[data-identifier="mainmenu"]
+        // We "force" this item to be active without having the `is-active` class.
+        display: block
+        // So we need some way to deactivate it again using JS.
+        &.is-force-deactive
+          display: none
+
   &--right
     right: 0
+
+    // On very very large screens, show notifications sidebar on the right.
+    +responsive.xxlarge-container
+      position: static
+
+      &[data-identifier="notifications"]
+        display: block
+
+        &.is-force-deactive
+          display: none
 
   &.is-active
     display: block
 
-  +responsive.xlarge-container
-    position: static
 
   &__curtain
     position: absolute
@@ -35,13 +58,13 @@
       display: none
 
 
-+responsive.xxlarge
-  .c-head-wing
+// +responsive.xxlarge
+//   .c-head-wing
 
-    // We "force" this item to be active without having the `is-active` class.
-    &[data-identifier="mainmenu"]
-      display: block
+//     // We "force" this item to be active without having the `is-active` class.
+//     &[data-identifier="mainmenu"]
+//       display: block
 
-      // So we need some way to deactivate it again using JS.
-      &.is-force-deactive
-        display: none
+//       // So we need some way to deactivate it again using JS.
+//       &.is-force-deactive
+//         display: none

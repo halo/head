@@ -34,6 +34,7 @@
     position: relative
     color: colors.$white
     padding: 0.3rem
+    overflow: auto // Clip wide logos on small screens
 
     &:active
       top: 1px
@@ -44,6 +45,10 @@
     container-type: inline-size
     grid-template-columns: auto 1fr auto
     grid-template-areas: "wings--left content wings--right"
+
+  &__wings
+    &--right
+      position: relative
 
   @each $column in wings--left content wings--right
     &__#{$column}

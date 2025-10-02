@@ -1,26 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.js-head-knob').forEach((item) => {
-    const href = item.getAttribute('href')
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.js-head-knob').forEach((knob) => {
+    const href = knob.getAttribute('href')
 
     // If this knob doesn't open a sidebar, it is a standalone link.
     if (href != '#') return
 
-    item.addEventListener('click', function(event) {
+    knob.addEventListener('click', function (event) {
       event.preventDefault()
-      const identifier = event.currentTarget.dataset.identifier
-      const group = event.currentTarget.dataset.group
-      const active = event.currentTarget.classList.contains('is-active')
+      const knob = event.currentTarget
 
-      document.querySelectorAll('.js-head-knob, .js-head-wing').forEach((item) => {
-        if (!active && item.dataset.identifier == identifier) {
-          item.classList.add('is-active')
-          item.classList.remove('is-force-deactive')
+      // The identifier of a knob always matches that of its wing.
+      const identifier = knob.dataset.identifier
 
-        } else if (item.dataset.group == group){
-          item.classList.remove('is-active')
-          item.classList.add('is-force-deactive')
-        }
+      // Check screen size
+      const mainMenuWing = document.querySelector(`.js-head-wing[data-identifier="mainmenu"]`)
+      const tight = getComputedStyle(mainMenuWing).getPropertyValue('position') == 'absolute'
+
+      // Handle current wing
+      const wing = document.querySelector(`.js-head-wing[data-identifier="${identifier}"]`)
+      const visible = getComputedStyle(wing).getPropertyValue('display') == 'block'
+      const group = knob.dataset.group
+
+      // Always close sidebars on the same side of the screen (left/right)
+      document.querySelectorAll(`.js-head-wing[data-group="${group}"]`).forEach((someWing) => {
+        someWing.classList.remove('is-active')
+        someWing.classList.add('is-force-deactive')
       })
+
+      if (tight) {
+        // On small screens, only ever show one menu, so close all others.
+        document.querySelectorAll('.js-head-wing').forEach((someWing) => {
+          if (someWing != wing) {
+            someWing.classList.remove('is-active')
+            someWing.classList.add('is-force-deactive')
+          }
+        })
+      }
+
+      // Now toggle the desired one.
+      if (visible) {
+        wing.classList.remove('is-active')
+        wing.classList.add('is-force-deactive')
+      } else {
+        wing.classList.add('is-active')
+        wing.classList.remove('is-force-deactive')
+      }
     })
 
   })

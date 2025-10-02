@@ -47,27 +47,28 @@ module Head
 
     def with_mainmenu(&)
       with_knob(preset: :mainmenu)
-      with_wing(preset: :mainmenu, &)
+      with_wing(id: :mainmenu, &)
     end
 
     def with_notifications(&)
       with_knob(preset: :notifications, right: true)
-      with_wing(preset: :notifications, right: true, &)
+      with_wing(id: :notifications, right: true, &)
     end
 
     def with_settings(&)
       with_knob(preset: :settings, right: true)
-      with_wing(preset: :settings, right: true, &)
+      with_wing(id: :settings, right: true, &)
     end
 
     def with_search(**options)
       with_knob(preset: :search, options:)
     end
 
-    def with_identicon(username:)
+    def with_identicon(username:, &)
       with_knob(preset: :avatar, right: true) do
         ::Head::Identicon.new(username.to_s).to_svg
       end
+      with_wing(id: :avatar, right: true, &)
     end
 
     renders_many :knobs, ::Head::Knob
