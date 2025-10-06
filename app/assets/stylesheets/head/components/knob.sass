@@ -9,7 +9,7 @@
   padding-right: 0.25em
   text-decoration: none
   +spacing.padding-vertical--tiny
-  +font-size.gigantic
+  +font-size.huge
 
   +link.states
     color: colors.$steel-gray
@@ -22,7 +22,6 @@
 
   &--identicon
     max-width: 1em
-    border-radius: 50%
     aspect-ratio: 1
     display: grid
     place-items: center
@@ -34,12 +33,14 @@
       object-fit: contain
 
   &--avatar
-    max-width: 1em
-    border-radius: 50%
+    max-width: 1.4em
     aspect-ratio: 1
     display: grid
     place-items: center
     overflow: hidden
+    padding: 0
+    // padding-right: 0.25em
+    padding-left: 0.25em
 
     img
       width: 100%

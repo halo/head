@@ -1,5 +1,6 @@
 @use "iglu/spacing"
 @use "head/settings/colors"
+@use "iglu/font-size"
 
 .c-head-theater
   height: 100%
@@ -9,6 +10,7 @@
   &__roof
     background-color: #444
     display: grid
+    line-height: 1 // Conformity of knobs
     align-items: center
     grid-template-columns: auto 1fr auto
     grid-template-areas: "knobs--left logo knobs--right"
@@ -35,6 +37,7 @@
     color: colors.$white
     padding: 0.3rem
     overflow: auto // Clip wide logos on small screens
+    +font-size.gigantic
 
     &:active
       top: 1px

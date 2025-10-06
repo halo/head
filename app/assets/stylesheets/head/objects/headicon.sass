@@ -1,4 +1,4 @@
-@use 'head/settings/icons'
+@use 'head/settings/headicons'
 
 .o-headicon
   font-family: "headicons"
@@ -13,16 +13,20 @@
 
 .o-headicon--bars-bold
   &:before
-    content: icons.$bars-bold
+    content: headicons.$bars-bold
+
+.o-headicon--bars-thin
+  &:before
+    content: headicons.$bars-bold
 
 .o-headicon--magnifier
   &:before
-    content: icons.$magnifier
+    content: headicons.$magnifier
 
 .o-headicon--bell
   &:before
-    content: icons.$bell
+    content: headicons.$bell
 
 .o-headicon--gear
   &:before
-    content: icons.$gear
+    content: headicons.$gear

@@ -25,7 +25,7 @@ module Head
 
     def icon
       return manual_icon if manual_icon
-      return :'bars-bold' if preset_mainmenu?
+      return :'bars-thin' if preset_mainmenu?
       return :bell if preset_notifications?
       return :gear if preset_settings?
 

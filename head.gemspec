@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir['CHANGELOG.md', 'LICENSE.txt', 'README.md',
                    'app/**/*', 'lib/**/*', 'config/**/*'] & `git ls-files -z`.split("\0")
-puts spec.files
+
   spec.require_paths = ['lib']
 
   spec.add_dependency 'actionview' # Needed by `view_component`

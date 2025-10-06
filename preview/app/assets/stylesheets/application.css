@@ -17,6 +17,7 @@
 .c-head-theater__roof {
   background-color: #444;
   display: grid;
+  line-height: 1;
   align-items: center;
   grid-template-columns: auto 1fr auto;
   grid-template-areas: "knobs--left logo knobs--right";
@@ -50,6 +51,9 @@
   color: #fff;
   padding: 0.3rem;
   overflow: auto;
+}
+.c-head-theater__logo {
+  font-size: 1.7143rem;
 }
 .c-head-theater__logo:active {
   top: 1px;
@@ -86,7 +90,7 @@
   padding-bottom: 0.2857rem;
 }
 .c-head-knob {
-  font-size: 1.7143rem;
+  font-size: 1.4286rem;
 }
 .c-head-knob, .c-head-knob:hover, .c-head-knob:active, .c-head-knob:visited {
   color: rgb(133.75, 133.75, 133.75);
@@ -99,7 +103,6 @@
 }
 .c-head-knob--identicon {
   max-width: 1em;
-  border-radius: 50%;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -111,12 +114,13 @@
   object-fit: contain;
 }
 .c-head-knob--avatar {
-  max-width: 1em;
-  border-radius: 50%;
+  max-width: 1.4em;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
   overflow: hidden;
+  padding: 0;
+  padding-left: 0.25em;
 }
 .c-head-knob--avatar img {
   width: 100%;
@@ -191,6 +195,10 @@
 }
 
 .o-headicon--bars-bold:before {
+  content: "\e905";
+}
+
+.o-headicon--bars-thin:before {
   content: "\e905";
 }
 
