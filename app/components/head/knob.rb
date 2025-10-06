@@ -28,6 +28,7 @@ module Head
       return :'bars-thin' if preset_mainmenu?
       return :bell if preset_notifications?
       return :gear if preset_settings?
+      return :'question-mark' if preset_help?
 
       :magnifier if preset_search?
     end
@@ -65,6 +66,10 @@ module Head
 
     def preset_search?
       preset == :search
+    end
+
+    def preset_help?
+      preset == :help
     end
 
     def preset_identicon?

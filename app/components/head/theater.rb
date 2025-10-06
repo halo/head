@@ -50,6 +50,11 @@ module Head
       with_wing(id: :mainmenu, &)
     end
 
+    def with_help(&)
+      with_knob(preset: :help, right: true)
+      with_wing(id: :help, right: true, &)
+    end
+
     def with_notifications(&)
       with_knob(preset: :notifications, right: true)
       with_wing(id: :notifications, right: true, &)

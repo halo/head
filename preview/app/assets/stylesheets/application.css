@@ -214,6 +214,10 @@
   content: "\e906";
 }
 
+.o-headicon--question-mark:before {
+  content: "\e900";
+}
+
 .u-head-smokescreen {
   background-color: rgba(100, 100, 100, 0.5);
   backdrop-filter: blur(2px);
