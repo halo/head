@@ -1,13 +1,43 @@
 <%= render Head::Theater.new do |theater| %>
+
   <% theater.with_mainmenu do %>
-    I am the menu
+    <%= render Head::Sidebar.new do |sidebar| %>
+
+      <%= sidebar.with_category(name: 'Desktop', icon: :gear, url: 'https://example.com') %>
+
+      <%= sidebar.with_category(name: 'Logistics', icon: :bell_ringing) do |category| %>
+        <%= category.with_headline name: 'Driving' %>
+        <%= category.with_link(name: 'Fishing', icon: :gear) %>
+        <%= category.with_link(name: 'Hunting', icon: :gear, url: 'https://example.com', link: { target: :_blank, active: :exact }) %>
+      <% end %>
+
+    <% end %>
   <% end %>
 
-  <%= render Head::Knob.new id: :custom do |knob| %>
-
-  <% end %>
 
   <% theater.with_logo do %>
-    I am a logo
+    I am a textual logo
   <% end %>
+
+
+  <% theater.with_settings do %>
+    <%= render Head::Sidebar.new(right: true) do |sidebar| %>
+
+      <%= sidebar.with_category(name: 'Profile', icon: :gear, url: 'https://example.com') %>
+
+      <%= sidebar.with_category(name: 'Security', icon: :bell_ringing) do |category| %>
+        <%= category.with_headline name: 'Login' %>
+        <%= category.with_link(name: 'Sessions', icon: :gear) %>
+        <%= category.with_link(name: 'Passkeys', icon: :gear, url: 'https://example.com', link: { target: :_blank, active: :exact }) %>
+      <% end %>
+
+    <% end %>
+  <% end %>
+
+
+  <% theater.with_body do %>
+    Body here.
+  <% end %>
+
+
 <% end %>

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Head
-  class Knob < ApplicationComponent
+  class Knob < ::Head::ApplicationComponent
     erb_template <<~ERB
       <%= link_to(url, class: classes, data: { identifier: id, group: group }, **options.except(:url)) do %>
         <% if icon %>
-          <i class="o-headicon <%= icon_class%><%=  %>"></i>
+          <i class="o-headicon <%= icon_class%>"></i>
         <% end %>
 
         <%= content %>

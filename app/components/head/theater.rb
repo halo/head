@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Head
-  class Theater < ApplicationComponent
+  class Theater < ::Head::ApplicationComponent
     erb_template <<~ERB
       <div class="c-head-theater">
         <div class="c-head-theater__roof">

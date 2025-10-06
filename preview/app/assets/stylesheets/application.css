@@ -9,6 +9,111 @@
   font-style: normal;
   src: url("head/headicons.woff") format("woff");
 }
+.c-head-sidebar {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+  align-items: start;
+}
+.c-head-sidebar__categories {
+  display: grid;
+}
+.c-head-sidebar--right .c-head-sidebar__categories {
+  order: 2;
+}
+.c-head-sidebar__secondary {
+  overflow: hidden;
+}
+.c-head-sidebar__category {
+  display: grid;
+  justify-content: center;
+  grid-template-areas: "icon" "label";
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  position: relative;
+}
+.c-head-sidebar__category {
+  padding-left: 0.2857rem;
+}
+.c-head-sidebar__category {
+  padding-right: 0.2857rem;
+}
+.c-head-sidebar__category__label {
+  grid-area: label;
+}
+.c-head-sidebar__category__icon {
+  grid-area: icon;
+}
+.c-head-sidebar__category, .c-head-sidebar__category:hover, .c-head-sidebar__category:active, .c-head-sidebar__category:visited {
+  color: rgb(197.5, 197.5, 197.5);
+}
+.c-head-sidebar__category:hover {
+  color: #fff;
+}
+.c-head-sidebar__category.is-active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+.c-head-sidebar__category__icon {
+  text-align: center;
+}
+.c-head-sidebar__category__label {
+  font-size: 0.7857rem;
+}
+.c-head-sidebar__links {
+  display: none;
+}
+.c-head-sidebar__links.is-active {
+  display: block;
+}
+.c-head-sidebar__link {
+  grid-column-gap: 0.6rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "icon label";
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  height: 100%;
+}
+.c-head-sidebar__link {
+  padding-top: 0.2857rem;
+}
+.c-head-sidebar__link {
+  padding-bottom: 0.2857rem;
+}
+.c-head-sidebar__link__icon {
+  grid-area: icon;
+}
+.c-head-sidebar__link__label {
+  grid-area: label;
+}
+.c-head-sidebar__link, .c-head-sidebar__link:hover, .c-head-sidebar__link:active, .c-head-sidebar__link:visited {
+  color: rgb(197.5, 197.5, 197.5);
+}
+.c-head-sidebar__link:hover {
+  color: #fff;
+}
+.c-head-sidebar__link:active {
+  color: #fff;
+}
+.c-head-sidebar__link.is-active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+.c-head-sidebar__link__icon {
+  font-size: 1.7143rem;
+}
+.c-head-sidebar__link__icon {
+  text-align: center;
+}
+.c-head-sidebar__link__label {
+  white-space: nowrap;
+}
+.c-head-sidebar__link__label {
+  font-size: 0.9286rem;
+}
+
 .c-head-theater {
   height: 100%;
   display: grid;
@@ -152,6 +257,7 @@
 }
 .c-head-wing--right {
   right: 0;
+  position: inherit;
 }
 @container (min-width: 94em) {
   .c-head-wing--right {

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Head
-  class Wing < ApplicationComponent
+  class Wing < ::Head::ApplicationComponent
     erb_template <<~ERB
       <div class="<%= classes.join(' ') %>" data-identifier="<%= id %>" data-group="<%= group %>">
         <%= content %>

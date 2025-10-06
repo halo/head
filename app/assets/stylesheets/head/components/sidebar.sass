@@ -1,0 +1,92 @@
+@use "iglu/spacing"
+@use "iglu/font-size"
+@use "head/settings/colors"
+@use "head/tools/link"
+
+.c-head-sidebar
+  display: grid
+  grid-template-columns: auto 1fr
+  height: 100%
+  align-items: start
+
+  &__categories
+    display: grid
+
+  &--right
+    .c-head-sidebar__categories
+      order: 2
+
+  &__secondary
+    overflow: hidden
+
+  &__category
+    display: grid
+    justify-content: center
+    grid-template-areas: "icon" "label"
+    padding-top: 0.2em
+    padding-bottom: 0.2em
+    position: relative
+    +spacing.padding-horizontal--tiny
+
+    @each $column in label icon
+      &__#{$column}
+        grid-area: #{$column}
+
+    +link.states
+      color: colors.$silver-gray
+
+    &:hover
+      color: colors.$white
+
+    &.is-active
+      color: colors.$white
+      background-color: rgba(255, 255, 255, 0.14) // Corrsponds to 10% change in underlying color
+
+    &__icon
+      text-align: center
+
+    &__label
+      +font-size.smaller
+
+  &__links
+    display: none
+
+    &.is-active
+      display: block
+
+  &__link
+    grid-column-gap: 0.6rem
+    display: grid
+    align-items: center
+    grid-template-columns: auto 1fr
+    grid-template-areas: "icon label"
+    padding-right: 0.5em
+    padding-left: 0.5em
+    height: 100%
+    +spacing.padding-vertical--tiny
+
+    @each $column in icon label
+      &__#{$column}
+        grid-area: #{$column}
+
+    +link.states
+      color: colors.$silver-gray
+
+    &:hover
+      color: colors.$white
+
+    &:active
+      color: colors.$white
+
+    &.is-active
+      color: colors.$white
+      background-color: rgba(255, 255, 255, 0.14)
+
+    &__icon
+      +font-size.gigantic
+      text-align: center
+
+    &__label
+      white-space: nowrap
+      +font-size.small
+
