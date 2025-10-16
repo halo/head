@@ -1,14 +1,14 @@
 <%= render Head::Theater.new do |theater| %>
 
   <% theater.with_mainmenu do %>
-    <%= render Head::Sidebar.new do |sidebar| %>
+    <%= render Head::Sidebar.new(icon_class_prefix: 'o-headicon o-headicon--') do |sidebar| %>
 
       <%= sidebar.with_category(name: 'Desktop', icon: :gear, url: 'https://example.com') %>
 
       <%= sidebar.with_category(name: 'Logistics', icon: :bell_ringing) do |category| %>
-        <%= category.with_headline name: 'Driving' %>
         <%= category.with_link(name: 'Fishing', icon: :gear) %>
         <%= category.with_link(name: 'Hunting', icon: :gear, url: 'https://example.com', link: { target: :_blank, active: :exact }) %>
+        <%= category.with_link(name: 'More things really long ones', icon: :gear) %>
       <% end %>
 
     <% end %>
@@ -26,7 +26,6 @@
       <%= sidebar.with_category(name: 'Profile', icon: :gear, url: 'https://example.com') %>
 
       <%= sidebar.with_category(name: 'Security', icon: :bell_ringing) do |category| %>
-        <%= category.with_headline name: 'Login' %>
         <%= category.with_link(name: 'Sessions', icon: :gear) %>
         <%= category.with_link(name: 'Passkeys', icon: :gear, url: 'https://example.com', link: { target: :_blank, active: :exact }) %>
       <% end %>
@@ -38,6 +37,5 @@
   <% theater.with_body do %>
     Body here.
   <% end %>
-
 
 <% end %>

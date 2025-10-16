@@ -24,8 +24,11 @@ module Head
       </div>
     ERB
 
-    renders_many :categories, ::Head::Sidebars::Category
+    renders_many :categories, -> (**options) do
+      ::Head::Sidebars::Category.new(icon_class_prefix:, **options)
+    end
 
     option :right, default: -> { false }
+    option :icon_class_prefix, default: -> {}
   end
 end

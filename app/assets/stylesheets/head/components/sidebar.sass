@@ -8,6 +8,7 @@
   grid-template-columns: auto 1fr
   height: 100%
   align-items: start
+  +font-size.default
 
   &__categories
     display: grid
@@ -18,22 +19,25 @@
 
   &__secondary
     overflow: hidden
+    background-color: rgba(255, 255, 255, 0.14) // Corrsponds to 10% change in underlying color
+    height: 100%
 
   &__category
     display: grid
     justify-content: center
-    grid-template-areas: "icon" "label"
+    grid-template-areas: "icon" "name"
     padding-top: 0.2em
     padding-bottom: 0.2em
     position: relative
+    text-decoration: none
     +spacing.padding-horizontal--tiny
 
-    @each $column in label icon
+    @each $column in category-icon category-name
       &__#{$column}
         grid-area: #{$column}
 
     +link.states
-      color: colors.$silver-gray
+      color: colors.$moon-gray
 
     &:hover
       color: colors.$white
@@ -42,10 +46,11 @@
       color: colors.$white
       background-color: rgba(255, 255, 255, 0.14) // Corrsponds to 10% change in underlying color
 
-    &__icon
+    &-icon
       text-align: center
+      +font-size.huge
 
-    &__label
+    &-name
       +font-size.smaller
 
   &__links
@@ -59,18 +64,19 @@
     display: grid
     align-items: center
     grid-template-columns: auto 1fr
-    grid-template-areas: "icon label"
-    padding-right: 0.5em
-    padding-left: 0.5em
+    grid-template-areas: "icon name"
+    padding-right: 0.5rem
+    padding-left: 0.5rem
+    text-decoration: none
     height: 100%
     +spacing.padding-vertical--tiny
 
-    @each $column in icon label
+    @each $column in link-icon link-name
       &__#{$column}
         grid-area: #{$column}
 
     +link.states
-      color: colors.$silver-gray
+      color: colors.$moon-gray
 
     &:hover
       color: colors.$white
@@ -82,11 +88,12 @@
       color: colors.$white
       background-color: rgba(255, 255, 255, 0.14)
 
-    &__icon
-      +font-size.gigantic
-      text-align: center
-
-    &__label
+    &-name
       white-space: nowrap
       +font-size.small
 
+    &-icon
+      +font-size.larger
+
+    &-separator
+      +spacing.margin-top--smaller
