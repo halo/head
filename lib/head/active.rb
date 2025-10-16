@@ -31,7 +31,7 @@ module Head
         !current_path.match(%r{^#{Regexp.escape(linked_path)}/?(\?.*)?$}).blank?
 
       when :exact
-        current_path == original_url
+        current_path == linked_path
 
       when Regexp
         !current_path.match(condition).blank?

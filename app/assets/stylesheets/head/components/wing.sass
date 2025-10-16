@@ -4,8 +4,9 @@
 .c-head-wing
   display: none
   // 320px is the min screen width we support.
-  // Our sidebar cannot be bigger, and it needs to leave some space
-  // at the right so that a click/tap there can close the sidebar.
+  // On devices that are that narrow, the sidebar needs to fit in,
+  // as well as a blank area on the right to close the sidebar with a tap.
+  // So the sidebar is limited to less than 320px on narrow devices.
   max-width: 265px
   height: 100%
   z-index: 1000
@@ -17,6 +18,8 @@
     // On rather large screens, always show the main menu in left sidebar
     +responsive.xlarge-container
       position: static
+      // On wide screens, it's ok to have a wider sidebar to fit all text.
+      max-width: 350px
 
       &[data-identifier="mainmenu"]
         // We "force" this item to be active without having the `is-active` class.

@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
       const active = category.classList.contains('is-active')
       const links = document.querySelector(`.js-head-sidebar__links[data-identifier="${identifier}"]`)
 
+      // Close all others
+      document.querySelectorAll('.js-head-sidebar__links').forEach((someLinks) => {
+        if (links == someLinks) return
+
+        someLinks.classList.remove('is-active')
+          const categoryClass = `.js-head-sidebar__category[data-identifier="${someLinks.dataset.identifier}"]`
+          document.querySelectorAll(categoryClass).forEach((someCategory) => {
+            someCategory.classList.remove('is-active')
+          })
+      })
+
       // Now toggle the desired one.
       if (active) {
         category.classList.remove('is-active')

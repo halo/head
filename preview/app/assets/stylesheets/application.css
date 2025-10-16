@@ -257,6 +257,7 @@
 @container (min-width: 64em) {
   .c-head-wing--left {
     position: static;
+    max-width: 350px;
   }
   .c-head-wing--left[data-identifier=mainmenu] {
     display: block;
