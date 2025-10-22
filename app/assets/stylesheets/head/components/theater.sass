@@ -8,11 +8,12 @@
   grid-template-rows: auto 1fr
 
   &__roof
-    background-color: #444
+    background-color: colors.$granite-gray
     display: grid
     line-height: 1 // Conformity of knobs
     align-items: center
-    grid-template-columns: auto 1fr auto
+    // Keep Logo centered even if left and right menus differ in width
+    grid-template-columns: 1fr 1fr 1fr
     grid-template-areas: "knobs--left logo knobs--right"
 
   @each $column in knobs--left logo knobs--right

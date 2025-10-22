@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Check screen size
       const mainMenuWing = document.querySelector(`.js-head-wing[data-identifier="mainmenu"]`)
-      const tight = getComputedStyle(mainMenuWing).getPropertyValue('position') == 'absolute'
+      const tight = mainMenuWing ? getComputedStyle(mainMenuWing).getPropertyValue('position') === 'absolute' : false
 
       // Handle current wing
       const wing = document.querySelector(`.js-head-wing[data-identifier="${identifier}"]`)
