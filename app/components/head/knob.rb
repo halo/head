@@ -45,6 +45,7 @@ module Head
       result = %w[c-head-knob js-head-knob]
       result.push 'c-head-knob--identicon' if preset_identicon?
       result.push 'c-head-knob--avatar' if preset_avatar?
+      result.push 'c-head-knob--mainmenu' if preset_mainmenu?
       result
     end
 

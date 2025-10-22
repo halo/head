@@ -12,7 +12,7 @@
       <% end %>
 
       <%= sidebar.with_category(name: 'Other', icon: :bell) do |category| %>
-        <%= category.with_link(name: 'Things', icon: :gear) %>
+        <%= category.with_link(name: 'Deletion', icon: :gear, link: { data: { method: :delete } }) %>
         <%= category.with_link(name: 'Trees', icon: :gear, url: 'https://example.com', link: { target: :_blank, active: :exact }) %>
         <%= category.with_link(name: 'Birds', icon: :gear) %>
       <% end %>

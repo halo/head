@@ -216,6 +216,9 @@
 .c-head-knob:active {
   color: #fff;
 }
+.c-head-knob--mainmenu {
+  display: grid;
+}
 .c-head-knob--identicon {
   max-width: 1em;
   aspect-ratio: 1;
@@ -245,6 +248,11 @@
   background-color: #fff;
 }
 
+@media screen and (min-width: 64em) {
+  .c-head-knob--mainmenu {
+    display: none;
+  }
+}
 .c-head-wing {
   display: none;
   max-width: 265px;
@@ -253,18 +261,6 @@
   position: absolute;
   background: rgb(70, 70, 70);
   color: #fff;
-}
-@container (min-width: 64em) {
-  .c-head-wing--left {
-    position: static;
-    max-width: 350px;
-  }
-  .c-head-wing--left[data-identifier=mainmenu] {
-    display: block;
-  }
-  .c-head-wing--left[data-identifier=mainmenu].is-force-deactive {
-    display: none;
-  }
 }
 .c-head-wing--right {
   right: 0;
@@ -302,6 +298,15 @@
   }
 }
 
+@media screen and (min-width: 64em) {
+  .c-head-wing--left {
+    position: static;
+    max-width: 350px;
+  }
+  .c-head-wing--left[data-identifier=mainmenu] {
+    display: block;
+  }
+}
 .o-headicon {
   font-family: "headicons";
   speak: none;

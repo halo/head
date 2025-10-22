@@ -5,7 +5,7 @@ module Head
     class Category < ::Head::ApplicationComponent
       erb_template <<~ERB
         <%= link_to(url, data:,
-                         class: 'c-head-sidebar__category js-head-sidebar__category') do %>
+                         class: 'c-head-sidebar__category js-head-sidebar__category', **link) do %>
           <%= content_tag :i, nil, class: icon_classes %>
           <%= content_tag :div, name, class: 'c-head-sidebar__category-name' %>
         <% end %>
@@ -19,6 +19,7 @@ module Head
       option :icon_class_prefix, default: -> {}
       option :name
       option :icon
+      option :link, default: -> { {} }
 
       def css_classes
         "c-head-sidebar__category #{'js-head-sidebar__category' if submenu?}"

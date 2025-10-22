@@ -1,3 +1,4 @@
+@use "iglu/responsive"
 @use "iglu/font-size"
 @use "iglu/spacing"
 @use "head/settings/colors"
@@ -19,6 +20,9 @@
 
   &:active
     color: colors.$white
+
+  &--mainmenu
+    display: grid
 
   &--identicon
     max-width: 1em
@@ -48,3 +52,12 @@
       object-fit: contain
       clip-path: circle()
       background-color: #fff
+
+
+// Keep this breakpoint analogous to wing.sass
++responsive.xlarge
+  .c-head-knob
+
+    &--mainmenu
+      display: none
+

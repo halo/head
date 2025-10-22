@@ -1,2 +1,2 @@
-sass: bundle exec sass preview/app/assets/stylesheets/application.sass:preview/app/assets/stylesheets/application.css --load-path app/assets/stylesheets --load-path node_modules/iglu --watch
+sass: sass --fatal-deprecation=$(sass --version) --color preview/app/assets/stylesheets/application.sass:preview/app/assets/stylesheets/application.css --load-path app/assets/stylesheets --load-path node_modules/iglu --watch
 lookbook: cd preview; bundle exec rails server -p 3006
